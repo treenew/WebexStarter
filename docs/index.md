@@ -1,5 +1,7 @@
 # Webex
 
+- 2018-09-07：更新至版本 v5.0.3
+
 ## Webex 是什么？
 
 Webex 是一套基于 `.NET Core 2.1` 的 Web 应用框架，用于构建可复用插件化开发的平台。
@@ -104,10 +106,6 @@ namespace Bms.FirstPlugin
 ```
 
 `staticFolders` 属性是用于指定在当前插件根目录下，哪一些目录将被视为静态资源目录（可通过浏览器直接访问），默认情况下为 `assets` 和 `node_modules` 两个文件夹。
-
-### 添加 Pages\Index.cshtml
-
-将其他插件项目的 `Pages\Index.cshtml` 直接复制到本插件，如无特殊情况，无需做任何改动。
 
 ### 添加一个组件页面
 
