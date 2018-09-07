@@ -1,0 +1,10 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "devDependencies": {
+    "blueimp-md5": "^2.10.0",
+    "element-ui": "^2.4.6",
+    "moment": "^2.22.2",
+    "vue": "^2.5.17"
+  }
+}
