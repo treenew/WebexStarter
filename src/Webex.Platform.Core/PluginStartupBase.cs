@@ -37,8 +37,7 @@ namespace System
                     //- Use by plugin project
                     opts.Root = "../";
                     opts.IsApplicationPlugin = true;
-                    opts.FiltersFolder = "../../Webex.Platform.Filters"; //-根据实际情况修改目录
-
+                    this.InitializeOptions(opts);
                     //- Use by platform project
                     //opts.Root = "../plugins"; //- 插件目录
                     //opts.PluginHomePath = ""; //- 默认主页
@@ -46,6 +45,11 @@ namespace System
                 })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 ;
+        }
+
+        protected virtual void InitializeOptions(PluginOptions options)
+        {
+            options.FiltersFolder = "../../Webex.Platform.Filters"; //-根据实际情况修改目录
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
