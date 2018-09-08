@@ -59,7 +59,7 @@ Webex 涉及了以下几个知识点：
 
 选择 `plugins` 解决方案文件夹，在此添加一个空的 `ASP.NET Core Web` 应用程序，项目名称为 `Bms.FirstPlugin`，并将位置改为“xxx\WebexStarter**\src\plugins**”，请注意，所有的插件在开发阶段，请务必放置此文件夹下。否则将无法正确识别插件。
 
-![创建插件项目](images/createproject.png)
+![创建插件项目](images/createProject.png)
 
 在接下来的弹出框中，选择 `空`，以及取消 `为 HTTPS 配置` 前的复选框。
 
