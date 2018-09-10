@@ -36,6 +36,7 @@ namespace Webex.Platform
 #else
                 .AddRedisCache(Configuration.GetSection("Redis"))
 #endif
+                .AddPlatform()
                 .AddSession()
                 .AddMvc()
 
@@ -43,7 +44,7 @@ namespace Webex.Platform
                 {
                     //- Use by plugin project
                     //opts.Root = "../";
-                    //opts.IsApplicationPlugin = true;
+
                     opts.Root = "../plugins"; //- 插件目录
                     opts.PluginHomePath = ""; //- 默认主页
                     opts.FiltersFolder = "../" + typeof(Startup).Namespace + ".Filters"; //- 筛选器目录

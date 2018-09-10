@@ -30,13 +30,13 @@ namespace System
                 .AddDbEngine(this.Configuration.GetConnectionString("DatabaseConnection"))
                 .AddSingleton<Aoite.ILockProvider, Aoite.SimpleLockProvider>()
                 .AddDistributedMemoryCache() //- 添加分布式缓存，用于 Session 提供程序
+                .AddPlatform()
                 .AddSession()
                 .AddMvc()
                 .AddPlugins(this.HostingEnvironment, opts =>
                 {
                     //- Use by plugin project
                     opts.Root = "../";
-                    opts.IsApplicationPlugin = true;
                     this.InitializeOptions(opts);
                     //- Use by platform project
                     //opts.Root = "../plugins"; //- 插件目录

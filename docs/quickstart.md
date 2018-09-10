@@ -28,7 +28,8 @@
 - `src\Webex.Platform.Core`：核心类库项目，有关于整体平台所需的公共内容均放置于此。
 - `src\Webex.Platform.Filters`：平台筛选器项目，用于平台运行时所需的执行上下文捕获及后台服务，其核心是两个接口的实现：
 	- **IPluginMiddleware**：插件中间件，用于 Plugin API 执行所需的执行上下文捕获、异常捕获，一般用于鉴权、第三方登录等操作。
-	- **IPluginBackgroundService**：插件后台服务，用于定时执行业务服务，如定时发送邮件、报表、任务作业等。
+	- **IPluginBackgroundService**：插件后台服务，用于定时执行业务服务，如定时发送邮件、报表、任务作业等（注意，若是插件项目的筛选器，并不支持此接口）。
+	- **IPluginTypeInfoInitializer**：插件类型实例初始化器，用于初始化 *Api 的新实例的筛选器。
 	- **IPluginFilter**：这是一个上述两个接口的根接口，如自定义了筛选器，可通过获取服务 `IPluginFilterProvider.Filters` 来获取自定义的筛选器。
 - `src\plugins\Bms.Home`：用于演示作用的后台管理首页的插件。
 - `src\plugins\Globals`：通用插件，默认情况下实现了几个默认组件：
@@ -203,8 +204,6 @@ namespace Bms.FirstPlugin.Apis
 运行发现，将正确运行结果。其路径的访问结构与 .vue 一致，只不过不需要增加 `*Api` 作为结尾，也无需使用任何后缀名。
 
 Api 结构为：`插件项目`、`插件类型`、`插件方法`。
-
-	特别提醒：当调试的目标项目是插件项目时，不支持动态修改 .cs 文件。只有调试的目标项目是主平台（Webex.Platform）时才支持插件的 .cs 文件动态修改。
 
 ## IPluginHandler
 
