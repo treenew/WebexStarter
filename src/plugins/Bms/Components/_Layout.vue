@@ -17,6 +17,7 @@
     <script src="/globals/node_modules/element-ui/lib/index.js"></script>
     <script src="/globals/node_modules/moment/min/moment.min.js"></script>
     <script src="/globals/node_modules/moment/locale/zh-cn.js"></script>
+    <script src="/globals/assets/vue.ext.js"></script>
 
     <!--第三方 JS 插件脚本-->
     <script src="/bms/assets/libs/history.js/native.history.js"></script>

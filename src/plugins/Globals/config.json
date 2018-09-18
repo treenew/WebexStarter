@@ -1,4 +1,5 @@
 ﻿{
   "title": "全局插件",
-  "description": "一个全局的插件，包含了所有项目的基础样式、node_modules 库、通用图片（如 logo 等）"
+  "description": "一个全局的插件，包含了所有项目的基础样式、node_modules 库、通用图片（如 logo 等）",
+  "staticFolders": [ "node_modules", "assets" ]
 }

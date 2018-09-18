@@ -1,7 +1,7 @@
 ﻿<template title="首页">
     <h1>欢迎您 {{identity.nickname}}</h1>
     <h2>创建于：{{created|date}}</h2>
-    <h2>现在是：{{now|date}}</h2>
+    <h2 v-class:text-red="count%2==0">现在是：{{now|date}}</h2>
 </template>
 <script>
     var intervalFlag;
@@ -13,13 +13,14 @@
             return {
                 created: new Date(),
                 now: new Date(),
+                count: 0
             }
         },
         init() {
             const vm = this;
             intervalFlag = setInterval(() => {
                 vm.now = new Date();
-                console.log('run now interval...');
+                vm.count++;
             }, 1000);
         },
         deinit() {
@@ -27,3 +28,9 @@
         }
     }
 </script>
+
+<style>
+    .text-red {
+        color: red;
+    }
+</style>
