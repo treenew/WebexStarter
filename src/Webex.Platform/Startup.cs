@@ -43,7 +43,12 @@ namespace Webex.Platform
                 .AddWebDefaults(this.Configuration)
                 .AddDbEngine(this.Configuration.GetConnectionString("DatabaseConnection"))
                 .AddPlatform()
-                .AddSession()
+                .AddSession(options =>
+                {
+                    //- Use session
+                    options.IdleTimeout = TimeSpan.FromHours(48);
+                    options.Cookie.HttpOnly = true;
+                })
                 .AddMvc()
 
                 .AddPlugins(this.HostingEnvironment, opts =>
