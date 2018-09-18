@@ -1,0 +1,6 @@
+﻿{
+  "title": "管理平台核心插件",
+  "description": "实现了管理平台的插件、登录、主页等业务功能",
+  "ueditor": "configs/ueditor.json",
+  "menus": "configs/bms-menus.json"
+}

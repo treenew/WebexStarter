@@ -27,15 +27,21 @@ namespace Webex.Platform
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var redisSection = Configuration.GetSection("Redis");
+            if(redisSection.Value.IsNull())
+            {
+                services
+                    .AddSingleton<Aoite.ILockProvider, Aoite.SimpleLockProvider>()
+                    .AddDistributedMemoryCache(); //- 添加分布式缓存，用于 Session 提供程序
+            }
+            else
+            {
+                services.AddRedisCache(redisSection);
+            }
+
             services
                 .AddWebDefaults(this.Configuration)
                 .AddDbEngine(this.Configuration.GetConnectionString("DatabaseConnection"))
-#if DEBUG
-                .AddSingleton<Aoite.ILockProvider, Aoite.SimpleLockProvider>()
-                .AddDistributedMemoryCache() //- 添加分布式缓存，用于 Session 提供程序
-#else
-                .AddRedisCache(Configuration.GetSection("Redis"))
-#endif
                 .AddPlatform()
                 .AddSession()
                 .AddMvc()
@@ -45,9 +51,11 @@ namespace Webex.Platform
                     //- Use by plugin project
                     //opts.Root = "../";
 
+                    opts.PluginHomePath = "/bms/index.html"; //- 默认主页
+#if DEBUG
                     opts.Root = "../plugins"; //- 插件目录
-                    opts.PluginHomePath = ""; //- 默认主页
                     opts.FiltersFolder = "../" + typeof(Startup).Namespace + ".Filters"; //- 筛选器目录
+#endif
                 })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 ;

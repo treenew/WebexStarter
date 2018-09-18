@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webex.Platform", "src\Webex.Platform\Webex.Platform.csproj", "{19082005-687B-4046-9AC1-559B1AB835BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webex.Platform", "src\Webex.Platform\Webex.Platform.csproj", "{19082005-687B-4046-9AC1-559B1AB835BC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "plugins", "plugins", "{DCB76380-C978-4E0F-8BBD-9AD4BE7A602E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webex.Platform.Core", "src\Webex.Platform.Core\Webex.Platform.Core.csproj", "{1ECEC5C7-F703-4277-9EDF-EE880458450B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webex.Platform.Core", "src\Webex.Platform.Core\Webex.Platform.Core.csproj", "{1ECEC5C7-F703-4277-9EDF-EE880458450B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webex.Platform.Filters", "src\Webex.Platform.Filters\Webex.Platform.Filters.csproj", "{37A23567-5FA7-40B7-9512-A5AB3900A503}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webex.Platform.Filters", "src\Webex.Platform.Filters\Webex.Platform.Filters.csproj", "{37A23567-5FA7-40B7-9512-A5AB3900A503}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Globals", "src\plugins\Globals\Globals.csproj", "{73FED634-BFCA-4EBD-9642-07F51D7AB414}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globals", "src\plugins\Globals\Globals.csproj", "{56A30F59-76AF-40BE-9048-8C8B3B30F1C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bms.Home", "src\plugins\Bms.Home\Bms.Home.csproj", "{2D7B481B-9343-493E-AE37-B30BB60D4E2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bms", "src\plugins\Bms\Bms.csproj", "{A2618D35-DA07-4DD3-B036-F37A241EAFEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bms.Sys", "src\plugins\Bms.Sys\Bms.Sys.csproj", "{9895D95F-7CFE-4A6C-870B-9C42F22A51B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bms.DbDemo", "src\plugins\Bms.DbDemo\Bms.DbDemo.csproj", "{88257916-F933-4B4E-814C-D44C88EE3A8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,21 +37,31 @@ Global
 		{37A23567-5FA7-40B7-9512-A5AB3900A503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37A23567-5FA7-40B7-9512-A5AB3900A503}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37A23567-5FA7-40B7-9512-A5AB3900A503}.Release|Any CPU.Build.0 = Release|Any CPU
-		{73FED634-BFCA-4EBD-9642-07F51D7AB414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73FED634-BFCA-4EBD-9642-07F51D7AB414}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73FED634-BFCA-4EBD-9642-07F51D7AB414}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73FED634-BFCA-4EBD-9642-07F51D7AB414}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D7B481B-9343-493E-AE37-B30BB60D4E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D7B481B-9343-493E-AE37-B30BB60D4E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D7B481B-9343-493E-AE37-B30BB60D4E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D7B481B-9343-493E-AE37-B30BB60D4E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56A30F59-76AF-40BE-9048-8C8B3B30F1C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56A30F59-76AF-40BE-9048-8C8B3B30F1C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56A30F59-76AF-40BE-9048-8C8B3B30F1C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56A30F59-76AF-40BE-9048-8C8B3B30F1C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2618D35-DA07-4DD3-B036-F37A241EAFEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2618D35-DA07-4DD3-B036-F37A241EAFEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2618D35-DA07-4DD3-B036-F37A241EAFEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2618D35-DA07-4DD3-B036-F37A241EAFEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9895D95F-7CFE-4A6C-870B-9C42F22A51B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9895D95F-7CFE-4A6C-870B-9C42F22A51B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9895D95F-7CFE-4A6C-870B-9C42F22A51B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9895D95F-7CFE-4A6C-870B-9C42F22A51B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88257916-F933-4B4E-814C-D44C88EE3A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88257916-F933-4B4E-814C-D44C88EE3A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88257916-F933-4B4E-814C-D44C88EE3A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88257916-F933-4B4E-814C-D44C88EE3A8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{73FED634-BFCA-4EBD-9642-07F51D7AB414} = {DCB76380-C978-4E0F-8BBD-9AD4BE7A602E}
-		{2D7B481B-9343-493E-AE37-B30BB60D4E2B} = {DCB76380-C978-4E0F-8BBD-9AD4BE7A602E}
+		{56A30F59-76AF-40BE-9048-8C8B3B30F1C2} = {DCB76380-C978-4E0F-8BBD-9AD4BE7A602E}
+		{A2618D35-DA07-4DD3-B036-F37A241EAFEC} = {DCB76380-C978-4E0F-8BBD-9AD4BE7A602E}
+		{9895D95F-7CFE-4A6C-870B-9C42F22A51B4} = {DCB76380-C978-4E0F-8BBD-9AD4BE7A602E}
+		{88257916-F933-4B4E-814C-D44C88EE3A8C} = {DCB76380-C978-4E0F-8BBD-9AD4BE7A602E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {60F24C3B-8B72-481B-BE60-842A44FD1AF4}

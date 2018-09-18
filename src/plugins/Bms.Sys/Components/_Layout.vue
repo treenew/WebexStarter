@@ -1,0 +1,1 @@
+﻿<import path="_Layout.vue" plugin="bms"></import>

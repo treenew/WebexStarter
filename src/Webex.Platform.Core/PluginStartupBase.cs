@@ -39,8 +39,8 @@ namespace System
                     opts.Root = "../";
                     this.InitializeOptions(opts);
                     //- Use by platform project
-                    //opts.Root = "../plugins"; //- 插件目录
                     //opts.PluginHomePath = ""; //- 默认主页
+                    //opts.Root = "../plugins"; //- 插件目录
                     //opts.FiltersFolder = "../" + typeof(Startup).Namespace + ".Filters"; //- 筛选器目录
                 })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)

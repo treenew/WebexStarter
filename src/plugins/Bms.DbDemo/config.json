@@ -1,0 +1,5 @@
+﻿{
+  "title": "管理平台演示数据库插件",
+  "description": "演示了 refs 目录以及数据库的基本操作",
+  "dbPath": "Data/test.db"
+}

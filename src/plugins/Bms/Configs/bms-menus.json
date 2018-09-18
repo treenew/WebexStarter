@@ -1,0 +1,55 @@
+﻿{
+  "Menus": [
+    {
+      "title": "<i class=\"el-icon-message\"></i>我的首页",
+      "items": [
+        {
+          "title": "欢迎中心",
+          "path": "/bms/index.html"
+        },
+        {
+          "title": "修改登录密码",
+          "path": "/bms/user/modifyPassword.html"
+        }
+      ]
+    },
+    {
+      "title": "<i class=\"el-icon-message\"></i>用户权限",
+      "items": [
+        {
+          "title": "用户列表",
+          "path": "/bms/user/index.html"
+        },
+        {
+          "title": "角色列表",
+          "path": "/bms-sys/role/index.html"
+        },
+        {
+          "title": "数据库测试",
+          "path": "/bms-dbdemo/testtable/index.html"
+        }
+      ]
+    },
+    {
+      "title": "<i class=\"el-icon-message\"></i>插件演示",
+      "items": [
+        {
+          "title": "富文本框",
+          "path": "/bms/demos/editor.html"
+        },
+        {
+          "title": "图片上传",
+          "path": "/bms/demos/image.html"
+        },
+        {
+          "title": "分页表格",
+          "path": "/bms/demos/table.html"
+        },
+        {
+          "title": "附件上传",
+          "path": "/bms/demos/upload.html"
+        }
+      ]
+    }
+  ]
+}
