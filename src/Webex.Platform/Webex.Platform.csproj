@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aoite.Web" Version="5.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
