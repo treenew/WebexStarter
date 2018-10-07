@@ -1,27 +1,24 @@
 ﻿<header title="{0} - 超级管理平台">
     <!--全局样式-->
     <link rel="stylesheet" href="/globals/node_modules/element-ui/lib/theme-chalk/index.css">
-
-    <!--第三方 JS 插件样式-->
-    <link href="/bms/assets/libs/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="/globals/assets/libs/iconfont/iconfont.css" rel="stylesheet" />
 
     <!--插件样式-->
     <link href="/bms/assets/css/site.css" rel="stylesheet" />
 </header>
 <footer>
-    <!--外部脚本-->
-    <script src="http://lib.baomitu.com/fastclick/1.0.6/fastclick.js"></script>
 
     <!--全局脚本-->
+    <script src="/globals/node_modules/fastclick/lib/fastclick.js"></script>
     <script src="/globals/node_modules/vue/dist/vue.min.js"></script>
     <script src="/globals/node_modules/element-ui/lib/index.js"></script>
     <script src="/globals/node_modules/moment/min/moment.min.js"></script>
     <script src="/globals/node_modules/moment/locale/zh-cn.js"></script>
-    <script src="/globals/assets/vue.ext.js"></script>
+    <script src="/globals/assets/js/vue.ext.js"></script>
+    <script src="/globals/assets/libs/history.js/native.history.js"></script>
+    <script src="/globals/assets/libs/iconfont/iconfont.js"></script>
 
     <!--第三方 JS 插件脚本-->
-    <script src="/bms/assets/libs/history.js/native.history.js"></script>
-    <script src="/bms/assets/libs/iconfont/iconfont.js"></script>
     <script src="/bms/assets/libs/ueditor/ueditor.config.js"></script>
     <script src="/bms/assets/libs/ueditor/ueditor.all.js"></script>
 
@@ -35,7 +32,7 @@
         <el-header class="el-topbar" height="auto">
             <el-row type="flex">
                 <el-col :xs="12" :sm="12" :md="12" :lg="12">
-                    <a class="topbar-home" target="_blank" href="javascript:void(0);"></a>
+                    <a class="topbar-home" target="_blank" href="javascript:void(0);" @click="menuShow=!menuShow" title="切换菜单显示"></a>
                     <a href="javascript:void(0);" target="_self" class="topbar-home-link">
                         <span>管理控制台</span>
                     </a>
@@ -56,7 +53,7 @@
             </el-row>
         </el-header>
         <el-container>
-            <el-aside width="auto">
+            <el-aside width="auto" v-show="menuShow">
                 <div class="version">VER 1.0.0.0</div>
                 <x-menus ref="menus"></x-menus>
             </el-aside>
@@ -85,6 +82,7 @@
                 loaded: identity != null,
                 identity,
                 keepAlive: false,
+                menuShow: true,
                 includes: [],
                 currentName: "",
                 homePath: "/bms/index.html"
