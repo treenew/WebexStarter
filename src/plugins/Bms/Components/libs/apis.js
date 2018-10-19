@@ -1,4 +1,4 @@
-export let menu = {
+﻿export let menu = {
     getMenus() {
         return api("/bms/menu/getMenus.json");
     }

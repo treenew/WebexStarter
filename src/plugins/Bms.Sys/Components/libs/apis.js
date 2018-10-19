@@ -1,4 +1,4 @@
-export let role = {
+﻿export let role = {
     findAll(args) {
         return api("/bms-sys/role/findAll.json", args);
     },

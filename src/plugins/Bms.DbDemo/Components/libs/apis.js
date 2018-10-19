@@ -1,4 +1,4 @@
-export let testTable = {
+﻿export let testTable = {
     findAll(args) {
         return api("/bms-dbdemo/testTable/findAll.json", args);
     },

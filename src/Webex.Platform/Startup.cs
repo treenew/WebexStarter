@@ -46,8 +46,15 @@ namespace Webex.Platform
                 .AddSession(options =>
                 {
                     //- Use session
-                    options.IdleTimeout = TimeSpan.FromHours(48);
-                    options.Cookie.HttpOnly = true;
+                    options.IdleTimeout = TimeSpan.FromDays(3);
+                    options.Cookie = new CookieBuilder
+                    {
+                        Expiration = TimeSpan.FromDays(3),
+                        Name = Microsoft.AspNetCore.Session.SessionDefaults.CookieName,
+                        Path = Microsoft.AspNetCore.Session.SessionDefaults.CookiePath,
+                        HttpOnly = true,
+                        SameSite = SameSiteMode.Lax,
+                    };
                 })
                 .AddMvc()
 
@@ -60,6 +67,7 @@ namespace Webex.Platform
 #if DEBUG
                     opts.Root = "../plugins"; //- 插件目录
                     opts.FiltersFolder = "../" + typeof(Startup).Namespace + ".Filters"; //- 筛选器目录
+                    opts.BackgroundServicesRunatKeys = new[] { "DEBUG" };
 #endif
                 })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)

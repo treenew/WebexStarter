@@ -20,7 +20,7 @@ namespace Bms.Internal.UEditor
         private readonly string _rawConfigJson;
         private readonly DateTime _createdTime;
 
-        public int Order => 0;
+        public int Order => PluginOrders.Default;
 
         public UEditorPluginHandler(IAppStorage appStorage, PluginProjectInfo projectInfo)
         {
@@ -37,6 +37,12 @@ namespace Bms.Internal.UEditor
 
         public async Task InvokeAsync(HttpContext httpContext, RequestDelegate next)
         {
+            if(!httpContext.Request.Path.Value.iEquals(this._serverUrl))
+            {
+                await next(httpContext);
+                return;
+            }
+
             Handler action = null;
             switch(httpContext.Request.Query["action"])
             {
