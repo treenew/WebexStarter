@@ -6,7 +6,7 @@
 <footer>
     <script src="/globals/node_modules/vue/dist/vue.min.js"></script>
     <script src="/globals/node_modules/element-ui/lib/index.js"></script>
-    <script src="/globals/assets/vue.ext.js"></script>
+    <script src="/globals/assets/js/vue.ext.js"></script>
 
     <script src="/bms/assets/js/bms.core.js"></script>
 </footer>

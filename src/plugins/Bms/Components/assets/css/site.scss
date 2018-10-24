@@ -1,8 +1,8 @@
-﻿@color-primary: #409EFF;
-@color-success: #67C23A;
-@color-warning: #E6A23C;
-@color-danger: #F56C6C;
-@color-info: #909399;
+﻿$color-primary: #409EFF;
+$color-success: #67C23A;
+$color-warning: #E6A23C;
+$color-danger: #F56C6C;
+$color-info: #909399;
 
 
 body, html, #app, .el-container {
@@ -52,7 +52,7 @@ hr {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: @color-primary;
+    background-color: $color-primary;
     border: 0;
     border-radius: 3px
 }
@@ -63,57 +63,60 @@ hr {
 
 .text {
     &-primary {
-        color: @color-primary;
+        color: $color-primary;
     }
 
     &-success {
-        color: @color-success;
+        color: $color-success;
     }
 
     &-warning {
-        color: @color-warning;
+        color: $color-warning;
     }
 
     &-danger {
-        color: @color-danger;
+        color: $color-danger;
     }
 
     &-info {
-        color: @color-info;
+        color: $color-info;
     }
 }
 
+
+@mixin internal() {
+    color: white;
+    border-radius: 4px;
+    padding: 5px 7.5px;
+    box-sizing: border-box;
+}
+
 .block {
-    .internal() {
-        color: white;
-        border-radius: 4px;
-        padding: 5px 7.5px;
-        box-sizing: border-box;
-    }
+
 
     &-primary {
-        .internal();
-        background-color: @color-primary;
+        @include internal();
+        background-color: $color-primary;
     }
 
     &-success {
-        .internal();
-        background-color: @color-success;
+        @include internal();
+        background-color: $color-success;
     }
 
     &-warning {
-        .internal();
-        background-color: @color-warning;
+        @include internal();
+        background-color: $color-warning;
     }
 
     &-danger {
-        .internal();
-        background-color: @color-danger;
+        @include internal();
+        background-color: $color-danger;
     }
 
     &-info {
-        .internal();
-        background-color: @color-info;
+        @include internal();
+        background-color: $color-info;
     }
 }
 
@@ -423,13 +426,13 @@ mainloader {
     padding: 18px 20px;
     color: #303133;
     box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
-    .bg-white;
+    @extend .bg-white;
 }
 
 .white-box {
-    .bg-white;
+    @extend .bg-white;
     padding: 25px;
-    .m-b-15;
+    @extend .m-b-15;
 }
 
 .r-icon-stats {

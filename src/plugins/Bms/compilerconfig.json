@@ -1,6 +1,6 @@
 ﻿[
   {
     "outputFile": "Components/assets/css/site.css",
-    "inputFile": "Components/assets/css/site.less"
+    "inputFile": "Components/assets/css/site.scss"
   }
 ]
